@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Search Our Library</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Library Search</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <!--Navbar section-->
+        <!-- Navbar section -->
         <nav class="navbar">
             <div class="navbar_container">
-                <a href="#search" id="navbar_logo">Librarian</a>
+                <a href="#search" id="navbar_logo">Library Finder</a>
                 <div class="navbar_toggle" id="mobile-menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -20,10 +19,13 @@
                 </div>
                 <ul class="navbar_menu">
                     <li class="navbar_item">
-                        <a href="#search" class="navbar_links" id="search-page">Search Our Records</a>
+                        <a href="#search" class="navbar_links" id="search-page">Search</a>
                     </li>
                     <li class="navbar_item">
-                        <a href="#about" class="navbar_links" id="about-page">About</a>
+                        <a href="#browse" class="navbar_links" id="browse-page">Browse Books</a>
+                    </li>
+                    <li class="navbar_item">
+                        <a href="#contact" class="navbar_links" id="contact-page">Contact Us</a>
                     </li>
                     <li class="navbar_btn">
                         <a href="#sign-up" class="button" id="signup">Sign Up</a>
@@ -31,6 +33,25 @@
                 </ul>
             </div>
         </nav>
+
+        <!-- Search Section -->
+        <section id="search" class="main_section">
+            <div class="search_container">
+                <h1>Search for a Book or Author</h1>
+                <p>Use the form below to find your favorite books and authors.</p>
+                <input type="text" id="author-input" placeholder="Author's Name">
+                <input type="text" id="book-input" placeholder="Book Title">
+                <button class="submit_button" type="submit">Search</button>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer_container">
+                <p>&copy; 2024 Library Finder | All rights reserved.</p>
+            </div>
+        </footer>
+
         <script src="script.js" async defer></script>
     </body>
 </html>
