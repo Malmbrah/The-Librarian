@@ -90,16 +90,31 @@ input[type="text"] {
     cursor: pointer;
 }
 
+.clear_button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    background-color: #5bb197;
+    color: white;
+    cursor: pointer;   
+}
+
 .footer {
     background-color: #2b2b2b;
     color: #fff;
     padding: 20px 0;
     text-align: center;
+    display: flex;
+    position: sticky;
+    justify-content: center;
+    z-index: 1;
 }
 
 .results-container {
     margin-top: 20px;
     color: white;
+    background-color: #fff;
+    height: 50px;
 }
 
 .results-container p {

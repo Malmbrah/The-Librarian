@@ -7,8 +7,28 @@ document.querySelector('.submit_button').addEventListener('click', function() {
     searchForBooksOrAuthors(authorName, bookName);
 });
 
+
+
 const searchForBooksOrAuthors = (authorName, bookName) => {
-    const apiUrl = `https://openlibrary.org/search.json?title=${encodeURIComponent(bookName)}&author=${encodeURIComponent(authorName)}`;
+
+    if(!bookName && !authorName){
+        alert('Please enter either an author or a book title to search');
+        return;
+    }
+
+    let apiUrl = 'https://openlibrary.org/search.json?';
+
+    if(bookName) {
+        apiUrl += `title=${encodeURIComponent(bookName)}`;
+    }
+
+    if(authorName) {
+        apiUrl += `author=${encodeURIComponent(authorName)}`;
+    }
+
+    if(authorName && bookName) {
+        apiUrl = `https://openlibrary.org/search.json?title=${encodeURIComponent(bookName)}&author=${encodeURIComponent(authorName)}`;
+    }
 
     fetch(apiUrl)
         .then(response => {
@@ -26,6 +46,7 @@ const searchForBooksOrAuthors = (authorName, bookName) => {
         });
 }
 
+
 const displayResults = (data) => {
     //Reset resuls
     const resultsContainer = document.querySelector('.results-container');
@@ -37,10 +58,24 @@ const displayResults = (data) => {
         return;
     } 
 
+    // Sorter søkeresultatene alfabetisk etter boktittel
+    const sortedResults = data.docs.sort((a, b) => {
+        const titleA = a.title.toLowerCase(); // Hent og konverter boktittelen til små bokstaver
+        const titleB = b.title.toLowerCase();
+        return titleA < titleB ? -1 : titleA > titleB ? 1 : 0; // Sorter bokstav for bokstav
+    });
+
     //Go through results and display them
-    data.docs.forEach(item => {
+    sortedResults.forEach(item => {
         const resultItem = document.createElement('p');
         resultItem.textContent = `${item.title} by ${item.author_name ? item.author_name.join(', ') : 'Unknown author'}`;
         resultsContainer.appendChild(resultItem);
     });
 }
+
+document.querySelector('.clear_button').addEventListener('click', function() {
+    const resultsContainer = document.querySelector('.results-container');
+    resultsContainer.innerHTML = '';
+    document.querySelector('#author-input').value = '';
+    document.querySelector('#book-input').value = '';
+})
