@@ -73,9 +73,34 @@ const displayResults = (data) => {
     });
 }
 
+//Resets the values when you click the "clear-button"
 document.querySelector('.clear_button').addEventListener('click', function() {
     const resultsContainer = document.querySelector('.results-container');
     resultsContainer.innerHTML = '';
     document.querySelector('#author-input').value = '';
     document.querySelector('#book-input').value = '';
 })
+
+const modal = document.querySelector('#login-modal');
+
+const logInButton = document.querySelector('#login');
+
+const closeButton = document.querySelector('.close-button');
+
+//When you click the log in button
+logInButton.addEventListener('click', function(event ) {
+    event.preventDefault(); //Preventing default anchor behavior
+    modal.style.display = 'block';
+});
+
+//When you click the close button, remove the modal
+closeButton.addEventListener('click', function() {
+    modal.style.display = 'none';
+});
+
+//if you click outside the modal
+window.addEventListener('click', function(event) {
+    if(event.target === modal){
+        modal.style.display = 'none';
+    }
+});
