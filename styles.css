@@ -143,7 +143,7 @@ input[type="text"] {
     border: 1px solid #888;
     width: 80%; 
     max-width: 400px;
-    height: 450px; 
+    height: 350px; 
     border-radius: 8px;
 }
 
@@ -151,13 +151,14 @@ input[type="text"] {
 .close-button {
     color: #380a0a;
     float: right;
-    font-size: 28px;
+    font-size: 15px;
     font-weight: bold;
     cursor: pointer;
 }
 
 .close-button h2 {
     color: white;
+    margin-bottom: 20px;
 }
 
 .close-button:hover, .close-button:focus {
