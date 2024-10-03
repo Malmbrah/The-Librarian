@@ -8,7 +8,6 @@ document.querySelector('.submit_button').addEventListener('click', function() {
 });
 
 
-
 const searchForBooksOrAuthors = (authorName, bookName) => {
 
     if(!bookName && !authorName){
@@ -82,10 +81,9 @@ document.querySelector('.clear_button').addEventListener('click', function() {
 })
 
 const modal = document.querySelector('#login-modal');
-
 const logInButton = document.querySelector('#login');
-
 const closeButton = document.querySelector('.close-button');
+const modalContent = document.querySelector('.modal-content')
 
 //When you click the log in button
 logInButton.addEventListener('click', function(event ) {
@@ -98,9 +96,10 @@ closeButton.addEventListener('click', function() {
     modal.style.display = 'none';
 });
 
-//if you click outside the modal
+/*
+//Denne treffer ikke helt som den skal - så lenge man trykker hvor som helst så går den bort
 window.addEventListener('click', function(event) {
-    if(event.target === modal){
+    if(event.target === modal && !modalContent.contains(event.target)){
         modal.style.display = 'none';
     }
-});
+});*/

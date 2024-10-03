@@ -73,6 +73,15 @@
     margin: 0 auto;
 }
 
+.search_container h1 {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.search_container p {
+    margin-bottom: 10px;
+}
+
 input[type="text"] {
     width: 100%;
     padding: 12px;
@@ -147,22 +156,23 @@ input[type="text"] {
     border-radius: 8px;
 }
 
+.modal-content h2 {
+    margin-bottom: 25px;
+}
+
 /* Close button */
 .close-button {
+    top: 10px;
+    right: 15px;
     color: #380a0a;
     float: right;
-    font-size: 15px;
+    font-size: 30px;
     font-weight: bold;
     cursor: pointer;
 }
 
-.close-button h2 {
-    color: white;
-    margin-bottom: 20px;
-}
-
 .close-button:hover, .close-button:focus {
-    color: black;
+    color: #000;
     text-decoration: none;
     cursor: pointer;
 }
