@@ -96,6 +96,10 @@ closeButton.addEventListener('click', function() {
     modal.style.display = 'none';
 });
 
+document.getElementById('navbar_logo').addEventListener('click', function() {
+    window.location.href = 'index.html';
+});
+
 /*
 //Denne treffer ikke helt som den skal - så lenge man trykker hvor som helst så går den bort
 window.addEventListener('click', function(event) {
