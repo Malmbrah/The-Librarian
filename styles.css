@@ -82,7 +82,7 @@
     margin-bottom: 10px;
 }
 
-input[type="text"] {
+#author-input, #book-input {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
@@ -152,7 +152,7 @@ input[type="text"] {
     border: 1px solid #888;
     width: 80%; 
     max-width: 400px;
-    height: 350px; 
+    height: 370px; 
     border-radius: 8px;
 }
 
@@ -198,4 +198,70 @@ input[type="text"] {
 
 .modal-content .submit_button:hover {
     background-color: #4a8072;
+}
+
+/* Styles for the contact form */
+form input, form textarea {
+    width: 60%;  /* Adjust as needed */
+    max-width: 500px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #5bb197;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Contact us */
+
+.main_contact {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: #f9f9f9;
+    justify-content: space-between;
+}
+
+.main_container_contact h1 {
+    padding: 20px;
+    text-align: left;
+    margin-left: 0;
+}
+
+.main_container_contact p {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.main_container_contact button{
+    display: flex;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f9f9f9;
+    align-items: end;
+}
+
+.description_wrapper {
+    position: absolute;
+    top: 5.2rem;
+    right: 3rem;
+    left: 50rem;
 }
