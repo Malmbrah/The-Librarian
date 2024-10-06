@@ -266,7 +266,7 @@ form label {
     left: 50rem;
 }
 
-/* Browse books */
+/* Browse books Section */
 
 #book_container {
     display: flex;
@@ -289,4 +289,21 @@ form label {
 .book_item p {
     margin-top: 10px;
     font-weight: bold;
+}
+
+#prev_page, #next_page {
+    padding: 10px 20px;
+    background-color: #5bb197;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button_container {
+    display: flex;
+    height: 75px;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto 50px;
 }

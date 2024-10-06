@@ -22,7 +22,7 @@ const displayBooks = (books) => {
 
         //Creating title element
         const bookTitle = document.createElement('p');
-        bookTitle.innerHTML = bookTitle;
+        bookTitle.innerHTML = book.title;
 
         //Add the image and title to the div element of book
         createBookDiv.appendChild(bookImage)
