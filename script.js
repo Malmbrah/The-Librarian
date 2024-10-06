@@ -100,10 +100,29 @@ document.getElementById('navbar_logo').addEventListener('click', function() {
     window.location.href = 'index.html';
 });
 
-/*
-//Denne treffer ikke helt som den skal - så lenge man trykker hvor som helst så går den bort
-window.addEventListener('click', function(event) {
-    if(event.target === modal && !modalContent.contains(event.target)){
-        modal.style.display = 'none';
-    }
-});*/
+//Browse books section
+
+const books = [
+    {olid: 'OL12345M', title: 'Book 1'},
+    {olid: 'OL67890M', title: 'Book 2'},
+    {olid: 'OL24680M', title: 'Book 3'}
+];
+
+const displayBooks = (books) => {
+    const bookContainer = document.getElementById('book_container');
+    bookContainer.innerHTML = ''; //To clear any existing content
+
+    books.forEach(book => {
+        //Creating a book element
+        const createBookDiv = document.createElement('div');
+        createBookDiv.classList.add('book_item');
+
+        //Creating the image for book
+        const bookImage = document.createElement('img');
+        bookImage.src = `https://covers.openlibrary.org/b/olid/${book.olid}-M.jpg`;
+        bookImage.alt = book.title; //Describing the picture with book title if image does not load
+
+        //Creating title element
+        
+    })
+}
