@@ -1,10 +1,10 @@
-/*Browse books section*/
+/*Browse books section
 
 const books = [
     {olid: 'OL12345M', title: 'Book 1'},
     {olid: 'OL67890M', title: 'Book 2'},
     {olid: 'OL24680M', title: 'Book 3'}
-];
+];*/
 
 const displayBooks = (books) => {
     const bookContainer = document.getElementById('book_container');
@@ -19,6 +19,11 @@ const displayBooks = (books) => {
         const bookImage = document.createElement('img');
         bookImage.src = `https://covers.openlibrary.org/b/olid/${book.olid}-M.jpg`;
         bookImage.alt = book.title; //Describing the picture with book title if image does not load
+
+        //Creating an overlay text
+        const overlayText = document.createElement('div');
+        overlayText.classList.add('overlay_text');
+        overlayText.innerHTML = 'Vil du legge til boken i listen din?';
 
         //Creating title element
         const bookTitle = document.createElement('p');
@@ -63,7 +68,9 @@ const fetchBooks = (page) => {
         .then(data => {
             const books = data.works.map(work => ({
                 olid: work.cover_edition_key,
-                title: work.title
+                title: work.title,
+                author: work.authors ? work.authors[0].name : 'Unknown',
+                year: work.first_publish_year || 'Unknown'
             }));
             displayBooks(books);
         })

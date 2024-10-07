@@ -291,6 +291,27 @@ form label {
 .book_item img:hover {
     transform: scale(1.2);
     cursor: pointer;
+    opacity: 0.2;
+}
+
+.book_item .overlay_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    display: none; 
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 999;
+}
+
+/* Show the overlay text and hide the image on hover */
+.book_item:hover .overlay_text {
+    display: block !important;
 }
 
 .book_item p {
