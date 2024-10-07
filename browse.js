@@ -30,8 +30,27 @@ const displayBooks = (books) => {
 
         //Add the bookDiv to the container
         bookContainer.appendChild(createBookDiv);
+
+        /*Adding a click event to show book details in a modal
+        createBookDiv.addEventListener('click', function() {
+            showInformationAboutBook(book);
+        })*/
     });
 }
+/*
+const showInformationAboutBook = (book) => {
+    const modal = document.getElementById('book_info_modal');
+    document.getElementById('book_title').innerHTML = book.title;
+    document.getElementById('book_author').innerHTML = 'Author: ' + book.author;
+    document.getElementById('book_year').innerHTML = 'Published: ' + book.year;
+
+    //Show the modal
+    modal.style.display = 'block';
+
+    document.getElementById('close_modal').addEventListener('click', function() {
+        document.getElementById('book-info-modal').style.display = 'none';
+    });
+}*/
 
 let currentPage = 1;
 const booksPerPage = 20;
@@ -66,3 +85,4 @@ document.getElementById('prev_page').addEventListener('click', () => {
         fetchBooks(currentPage);
     }
 });
+
