@@ -23,7 +23,7 @@ const displayBooks = (books) => {
         //Creating an overlay text
         const overlayText = document.createElement('div');
         overlayText.classList.add('overlay_text');
-        overlayText.innerHTML = 'Vil du legge til boken i listen din?';
+        overlayText.textContent = 'Vil du legge til boken i listen din?';
 
         //Creating title element
         const bookTitle = document.createElement('p');
@@ -32,6 +32,7 @@ const displayBooks = (books) => {
         //Add the image and title to the div element of book
         createBookDiv.appendChild(bookImage)
         createBookDiv.appendChild(bookTitle);
+        createBookDiv.appendChild(overlayText);
 
         //Add the bookDiv to the container
         bookContainer.appendChild(createBookDiv);
